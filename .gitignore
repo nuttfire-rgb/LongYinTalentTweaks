@@ -1,0 +1,10 @@
+bin/
+obj/
+_staging/
+
+.vs/
+.idea/
+
+*.user
+*.rsuser
+*.suo
