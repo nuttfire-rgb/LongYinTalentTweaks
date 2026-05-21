@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using MelonLoader;
 
 namespace LongYinTalentTweaks;
@@ -40,8 +39,6 @@ internal static class ModConfig
         SubscribeToEntryChanges(_extraMaxTags);
         SubscribeToEntryChanges(_allowInitiallyUnchoosableStartTags);
 
-        string preferencesFilePath = Path.Combine(MelonLoader.Utils.MelonEnvironment.UserDataDirectory, "MelonPreferences.cfg");
-        _category.SetFilePath(preferencesFilePath, true, false);
         _category.LoadFromFile(false);
         MelonPreferences.Save();
     }

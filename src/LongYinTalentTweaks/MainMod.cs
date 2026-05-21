@@ -1,7 +1,7 @@
 using HarmonyLib;
 using MelonLoader;
 
-[assembly: MelonInfo(typeof(LongYinTalentTweaks.MainMod), "LongYinTalentTweaks", "0.1.0", "skysw")]
+[assembly: MelonInfo(typeof(LongYinTalentTweaks.MainMod), "LongYinTalentTweaks", "1.1.0", "skysw")]
 [assembly: MelonGame("TppStudio", "LongYinLiZhiZhuan")]
 
 namespace LongYinTalentTweaks;
