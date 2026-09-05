@@ -19,6 +19,9 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build Project
+      env:
+        LongYinMelonNet6Dir: ${{ github.workspace }}/lib
+        LongYinGameAssembliesDir: ${{ github.workspace }}/lib
       run: dotnet build --configuration Release
 
     - name: Upload DLL Artifact
