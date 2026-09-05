@@ -103,19 +103,22 @@ internal static class StartMenuControllerStartChooseTagClickedPatch
             return true;
         }
 
-        StartMenuPatchHelpers.ApplyCurrentConfigToStartMenuPlayer(player);
-
+        // คำนวณค่า Cost ของ Tag ที่ต้องการกดเลือก
         float cost = targetTag.GetCostValue(true);
-        if (!StartMenuPatchHelpers.CanStartChooseTag(__instance, player, tagID, targetTag, requireStartChooseAble: true)
+
+        // ตรวจสอบเงื่อนไขการเลือกโดยไม่เรียก ApplyCurrentConfig ซ้ำซ้อนก่อนหักแต้ม
+        if (!StartMenuPatchHelpers.CanStartChooseTag(__instance, player, tagID, targetTag, requireStartChooseAble: false)
             || player.heroTagPoint < cost)
         {
             StartMenuPatchHelpers.PlayUiSound("Sound/SoundEffect/WrongClick");
             return false;
         }
 
+        // เมื่อผ่านเงื่อนไข ให้สั่งเรียนรู้ Tag และหักแต้มทันที
         StartMenuPatchHelpers.PlayUiSound("Sound/SoundEffect/Success");
         player.UnderstandTag(tagID, false);
         player.heroTagPoint -= cost;
+        
         __instance.RefreshTagMenu();
         return false;
     }
@@ -327,7 +330,6 @@ internal static class StartMenuPatchHelpers
                 HeroTagDataBase? targetTagData = targetTag?.DataBase();
                 bool canChoose = targetTag != null
                     && targetTagData != null
-                    && targetTag.StartChooseAble()
                     && CanStartChooseTag(menuController, player, targetTag.tagID, targetTagData, requireStartChooseAble: false);
 
                 button.interactable = canChoose;
@@ -343,7 +345,8 @@ internal static class StartMenuPatchHelpers
         HeroTagDataBase targetTag,
         bool requireStartChooseAble)
     {
-        if (requireStartChooseAble)
+        // ปิดการเช็ก requireStartChooseAble ซ้ำซ้อน เพื่อยอมรับค่าจาก Postfix Patch
+        if (requireStartChooseAble && !ShouldAllowInitiallyUnchoosableStartTags())
         {
             HeroTagData previewTag = new(tagID, -1f, string.Empty);
             if (!previewTag.StartChooseAble())
