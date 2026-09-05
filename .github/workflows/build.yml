@@ -19,7 +19,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Build Project
-      run: dotnet build --configuration Release "/p:AssemblySearchPaths=lib/;lib/MelonLoader/;lib/MelonLoader/net6/"
+      run: dotnet build --configuration Release
 
     - name: Upload DLL Artifact
       uses: actions/upload-artifact@v4
