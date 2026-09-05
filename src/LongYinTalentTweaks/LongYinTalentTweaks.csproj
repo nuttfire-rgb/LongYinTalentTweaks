@@ -10,43 +10,43 @@
 
   <ItemGroup>
     <Reference Include="MelonLoader">
-      <HintPath>..\..\lib\MelonLoader.dll</HintPath>
+      <HintPath>$(LongYinMelonNet6Dir)\MelonLoader.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="0Harmony">
-      <HintPath>..\..\lib\0Harmony.dll</HintPath>
+      <HintPath>$(LongYinMelonNet6Dir)\0Harmony.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Il2CppInterop.Runtime">
-      <HintPath>..\..\lib\Il2CppInterop.Runtime.dll</HintPath>
+      <HintPath>$(LongYinMelonNet6Dir)\Il2CppInterop.Runtime.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\lib\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\Assembly-CSharp.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\..\lib\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\Il2Cppmscorlib.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Il2CppSystem">
-      <HintPath>..\..\lib\Il2CppSystem.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\Il2CppSystem.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>..\..\lib\UnityEngine.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\UnityEngine.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\..\lib\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\UnityEngine.AudioModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\lib\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\UnityEngine.CoreModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\lib\UnityEngine.UI.dll</HintPath>
+      <HintPath>$(LongYinGameAssembliesDir)\UnityEngine.UI.dll</HintPath>
       <Private>false</Private>
     </Reference>
   </ItemGroup>
